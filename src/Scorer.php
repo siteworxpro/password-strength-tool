@@ -1,7 +1,6 @@
 <?php
 
 namespace Siteworx\Passwords;
-use League\CLImate\CLImate;
 
 /**
  * Class Scorer
