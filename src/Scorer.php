@@ -236,7 +236,7 @@ class Scorer
         $this->passwordScore['calculatedData']['seqLetters']['value'] = 0;
         $this->passwordScore['calculatedData']['seqLetters']['count'] = 0;
         $this->passwordScore['calculatedData']['seqLetters']['displayName'] = 'Sequential Letters';
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $lastChar = $this->password[$i - 1];
             if ($char !== '' && !is_numeric($char) && !is_numeric($lastChar)) {
@@ -263,7 +263,7 @@ class Scorer
         $this->passwordScore['calculatedData']['seqNumbers']['value'] = 0;
         $this->passwordScore['calculatedData']['seqNumbers']['count'] = 0;
         $this->passwordScore['calculatedData']['seqNumbers']['displayName'] = 'Sequential Numbers';
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $lastChar = $this->password[$i - 1];
             if ($char !== '' && is_numeric($char) && is_numeric($lastChar)) {
@@ -291,7 +291,7 @@ class Scorer
         $this->passwordScore['calculatedData']['conscNumbers']['value'] = 0;
         $this->passwordScore['calculatedData']['conscNumbers']['count'] = 0;
         $this->passwordScore['calculatedData']['conscNumbers']['displayName'] = 'Consecutive Numbers';
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $lastChar = $this->password[$i - 1];
             if (is_numeric($char)) {
@@ -318,7 +318,7 @@ class Scorer
         $this->passwordScore['calculatedData']['conscLowerCase']['value'] = 0;
         $this->passwordScore['calculatedData']['conscLowerCase']['count'] = 0;
         $this->passwordScore['calculatedData']['conscLowerCase']['displayName'] = 'Consecutive Lower Case';
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $charDec = \ord($char);
             $lastChar = $this->password[$i - 1];
@@ -345,7 +345,7 @@ class Scorer
         $this->passwordScore['calculatedData']['conscUpperCase']['value'] = 0;
         $this->passwordScore['calculatedData']['conscUpperCase']['count'] = 0;
         $this->passwordScore['calculatedData']['conscUpperCase']['displayName'] = 'Consecutive Upper Case';
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $charDec = \ord($char);
             $lastChar = $this->password[$i - 1];
@@ -373,7 +373,7 @@ class Scorer
         $this->passwordScore['calculatedData']['repeatingChars']['count'] = 0;
         $this->passwordScore['calculatedData']['repeatingChars']['displayName'] = 'Repeating Characters';
         $iterations = 0;
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $charDec = \ord($char);
             $lastChar = $this->password[$i - 1];
@@ -401,7 +401,7 @@ class Scorer
         $this->passwordScore['calculatedData']['reusingChars']['value'] = 0;
         $this->passwordScore['calculatedData']['reusingChars']['count'] = 0;
         $this->passwordScore['calculatedData']['reusingChars']['displayName'] = 'Reusing Characters';
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             foreach (count_chars($this->password, 1) as $i => $val) {
                 if ($val > 1) {
                     $this->passwordScore['calculatedData']['reusingChars']['value'] -= $val;
@@ -445,7 +445,7 @@ class Scorer
         $this->passwordScore['calculatedData']['lettersOnly']['displayName'] = 'Letters Only';
 
         $i = 0;
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             if (is_numeric($this->password[$i])) {
                 $this->passwordScore['calculatedData']['lettersOnly']['value'] = 0;
                 $this->passwordScore['calculatedData']['lettersOnly']['count'] = 'no';
@@ -487,7 +487,7 @@ class Scorer
         $this->passwordScore['calculatedData']['lowerCase']['count'] = 0;
         $this->passwordScore['calculatedData']['lowerCase']['displayName'] = 'Lowercase Letters';
         $iterations = 0;
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $charDec = \ord($char);
             if ($charDec <= 122 && $charDec >= 97) {
@@ -506,7 +506,7 @@ class Scorer
         $this->passwordScore['calculatedData']['numbers']['count'] = 0;
         $this->passwordScore['calculatedData']['numbers']['displayName'] = 'Numbers';
         $iterations = 0;
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             if (is_numeric($char)) {
                 $this->passwordScore['calculatedData']['numbers']['value'] += ceil(8 * (.5 ** $iterations));
@@ -530,7 +530,7 @@ class Scorer
         $this->passwordScore['calculatedData']['specialChars']['count'] = 0;
         $this->passwordScore['calculatedData']['specialChars']['displayName'] = 'Special Characters';
         $iterations = 0;
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $charDec = \ord($char);
             if (($charDec <= 47 && $charDec >= 33) || ($charDec <= 96 && $charDec >= 91) || ($charDec <= 126 && $charDec >= 123)) {
