@@ -1,0 +1,15 @@
+{
+    "name": "siteworxpro/password-score",
+    "description": "Find a passwords strength using more complex methods",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Siteworx\\Passwords\\": "src/"
+        }
+    },
+    "require-dev": {
+    }
+}
