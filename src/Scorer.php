@@ -462,7 +462,7 @@ class Scorer
         $this->passwordScore['calculatedData']['upperCase']['count'] = 0;
         $this->passwordScore['calculatedData']['upperCase']['displayName'] = 'Uppercase Letters';
         $iterations = 0;
-        while ($i <= \strlen($this->password)) {
+        while ($i < \strlen($this->password)) {
             $char = $this->password[$i];
             $charDec = \ord($char);
             if ($charDec <= 90 && $charDec >= 65) {

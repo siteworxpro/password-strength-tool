@@ -122,6 +122,8 @@ You can also provide a bias to the scorer if you want your passwords to be score
 Pass in a value between -5 to 5.
 
 ```php
+$scorer = \Siteworx\Passwords\Scorer::score('N0wAStrongPassword!', -5);
+echo 'This password is ' . $scorer->stringValue();
 $scorer = \Siteworx\Passwords\Scorer::score('N0wAStrongPassword!', 0);
 echo 'This password is ' . $scorer->stringValue();
 $scorer = \Siteworx\Passwords\Scorer::score('N0wAStrongPassword!', 5);
@@ -129,6 +131,7 @@ echo 'This password is ' . $scorer->stringValue();
 
 ```
 ```
+This password is Poor
 This password is Fair
 This password is Very Strong
 ```
