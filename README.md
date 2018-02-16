@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/siteworxpro/password-strength-tool.svg?branch=master)](https://travis-ci.org/siteworxpro/password-strength-tool)
 
-A simple and fast password strength tester inspired by WolframAlpha's Calculation
+A simple and fast password strength tester inspired by [WolframAlpha's Calculation](https://www.wolframalpha.com/input/?i=password+strength+TestPassword)
 
 **Usage**
 
