@@ -400,8 +400,9 @@ class Scorer
         $this->passwordScore['calculatedData']['reusingChars']['value'] = 0;
         $this->passwordScore['calculatedData']['reusingChars']['count'] = 0;
         $this->passwordScore['calculatedData']['reusingChars']['displayName'] = 'Reusing Characters';
+        $charMap = count_chars($this->password, 1);
         while ($i < \strlen($this->password)) {
-            foreach (count_chars($this->password, 1) as $i => $val) {
+            foreach ($charMap as $val) {
                 if ($val > 1) {
                     $this->passwordScore['calculatedData']['reusingChars']['value'] -= $val;
                     $this->passwordScore['calculatedData']['reusingChars']['count'] += 1;
